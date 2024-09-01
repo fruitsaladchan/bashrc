@@ -47,6 +47,7 @@ PS1='\[\e[48;2;192;163;110m\]\[\e[38;2;31;31;40m\] \W \[\e[0m\]\
 #general
 
 alias v="nvim"
+alias vim="nvim"
 alias update="sudo apt update && sudo apt upgrade"
 alias size="du -sh"
 alias num="find . -type f | wc -l"
@@ -54,7 +55,6 @@ alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias info="sudo dmidecode | grep -A 9 'System Information'"
 alias mkdir='mkdir -pv'
-alias ports='netstat -tulanp'
 
 #networking
 
@@ -63,6 +63,7 @@ alias vnstat='vnstat -i eno2'
 alias iftop='iftop -i eno2'
 alias tcpdump='tcpdump -i eno2'
 alias ethtool='ethtool eno2'
+alias ports='netstat -tulanp'
 
 #sysinfo
 
