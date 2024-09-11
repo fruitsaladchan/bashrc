@@ -60,7 +60,8 @@ alias ll="eza -l"
 alias la="eza -la"
 alias l="eza -l"
 alias linutil="curl -fsSL https://christitus.com/linux | sh"
-alias f="find . | grep "
+alias f="sudo find . | grep "
+alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
 #networking
 
