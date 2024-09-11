@@ -60,6 +60,7 @@ alias ll="eza -l"
 alias la="eza -la"
 alias l="eza -l"
 alias linutil="curl -fsSL https://christitus.com/linux | sh"
+alias f="find . | grep "
 
 #networking
 
@@ -75,3 +76,12 @@ alias meminfo='free -m -l -t'
 alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
+
+# disk space
+
+alias diskspace="du -S | sort -n -r |more"
+alias folders='du -h --max-depth=1'
+alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+alias tree='tree -CAhF --dirsfirst'
+alias treed='tree -CAFd'
+alias mountedinfo='df -hT'
