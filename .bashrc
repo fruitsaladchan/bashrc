@@ -65,11 +65,7 @@ alias countfiles="for t in files links directories; do echo \`find . -type \${t:
 
 #networking
 
-alias dnstop='dnstop -l 5  eno2'
-alias vnstat='vnstat -i eno2'
-alias iftop='iftop -i eno2'
-alias tcpdump='tcpdump -i eno2'
-alias ethtool='ethtool eno2'
+alias openports='netstat -nape --inet'
 
 #sysinfo
 
