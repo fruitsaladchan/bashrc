@@ -49,7 +49,6 @@ PS1='\[\e[48;5;240m\]\[\e[38;5;255m\] \W \[\e[0m\]\
 alias v="nvim"
 alias update="sudo apt update && sudo apt upgrade"
 alias size="du -sh"
-alias num="find . -type f | wc -l"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias info="sudo dmidecode | grep -A 9 'System Information'"
@@ -75,9 +74,7 @@ alias cpuinfo='lscpu'
 
 # disk space
 
-alias diskspace="du -S | sort -n -r |more"
-alias folders='du -h --max-depth=1'
-alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
-alias tree='tree -CAhF --dirsfirst'
-alias treed='tree -CAFd'
-alias mountedinfo='df -hT'
+num() {
+    local dir=${1:-.}  # Default to current directory if no argument is provided
+    sudo find "$dir" -type f | wc -l
+}
