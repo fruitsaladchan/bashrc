@@ -54,7 +54,6 @@ alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias info="sudo dmidecode | grep -A 9 'System Information'"
 alias mkdir='mkdir -pv'
-alias ports='netstat -tulanp'
 alias ls="eza"
 alias ll="eza -l"
 alias la="eza -la"
