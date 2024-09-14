@@ -36,12 +36,13 @@ function __char_prompt_module {
 
 VIRTUAL_ENV_DISABLE_PROMPT="Y"
 PROMPT_COMMAND=("__precmd_hook" "${PROMPT_COMMAND[@]}")
-PS1='\[\e[48;5;240m\]\[\e[38;5;255m\] \W \[\e[0m\]\
-\[\e[48;5;236m\]\[\e[38;5;240m\]\[\e[0m\]\
-\[\e[48;5;236m\]\[\e[38;5;250m\]$(__status_prompt_module)\[\e[0m\]\
-\[\e[48;5;31m\]\[\e[38;5;236m\]\[\e[0m\]\
-\[\e[48;5;31m\]\[\e[38;5;255m\]$(__char_prompt_module)\[\e[0m\]\
-\[\e[38;5;31m\]\[\e[0m\] '
+
+PS1='\[\e[48;5;236m\]\[\e[38;5;183m\] \W \[\e[0m\]\
+\[\e[48;5;238m\]\[\e[38;5;236m\]\[\e[0m\]\
+\[\e[48;5;238m\]\[\e[38;5;242m\]$(__status_prompt_module)\[\e[0m\]\
+\[\e[48;5;183m\]\[\e[38;5;238m\]\[\e[0m\]\
+\[\e[48;5;183m\]\[\e[38;5;189m\]$(__char_prompt_module)\[\e[0m\]\
+\[\e[38;5;183m\]\[\e[0m\] '
 
 #general
 
