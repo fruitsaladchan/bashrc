@@ -49,6 +49,7 @@ PS1='\[\e[48;5;236m\]\[\e[38;5;183m\] \W \[\e[0m\]\
 alias v="nvim"
 alias update="sudo apt update && sudo apt upgrade"
 alias size="du -sh"
+alias neofetch="fastfetch"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias info="sudo dmidecode | grep -A 9 'System Information'"
@@ -72,9 +73,28 @@ alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
 
-# disk space
+# functions
 
 num() {
     local dir=${1:-.}  # Default to current directory if no argument is provided
     sudo find "$dir" -type f | wc -l
 }
+
+function up {
+    local limit=$1
+    local d=""
+
+    for ((i=0; i<limit; i++)); do
+        d="$d/.."
+    done
+
+    d=$(echo "$d" | sed 's/^\///')
+
+    if [[ -z "$d" ]]; then
+        d=".."
+    fi
+
+    cd "$d"
+}
+
+export SUDO_EDITOR=nvim
