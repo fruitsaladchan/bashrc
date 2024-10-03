@@ -46,10 +46,8 @@ function up {
         d="$d/.."
     done
 
-    # Remove the leading slash if present
     d=$(echo "$d" | sed 's/^\///')
 
-    # If $d is empty, default to ".."
     if [[ -z "$d" ]]; then
         d=".."
     fi
