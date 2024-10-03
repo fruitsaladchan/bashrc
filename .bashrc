@@ -1,58 +1,17 @@
 # .bashrc
 
-# == Prompt ==
-function __precmd_hook {
-    # exit code
-    __exit_code=$?
-
-    # window title
-    echo -ne "\e]0;${PWD/#$HOME/\~}\a"
-}
-
-function __status_prompt_module {
-    local status=""
-    if ! [[ -z "$VIRTUAL_ENV" ]]; then
-        status+=" v"
-    fi
-
-    if command git rev-parse &> /dev/null; then
-        status+=" g"
-    fi
-
-    if ! [[ -z "$status" ]]; then
-        status+=" "
-    fi
-
-    echo "$status"
-}
-
-function __char_prompt_module {
-    if [[ $__exit_code -eq 0 ]]; then
-        echo ' $ '
-    else
-        echo ' # '
-    fi
-}
-
-VIRTUAL_ENV_DISABLE_PROMPT="Y"
-PROMPT_COMMAND=("__precmd_hook" "${PROMPT_COMMAND[@]}")
-
-PS1='\[\e[48;5;236m\]\[\e[38;5;183m\] \W \[\e[0m\]\
-\[\e[48;5;238m\]\[\e[38;5;236m\]\[\e[0m\]\
-\[\e[48;5;238m\]\[\e[38;5;242m\]$(__status_prompt_module)\[\e[0m\]\
-\[\e[48;5;183m\]\[\e[38;5;238m\]\[\e[0m\]\
-\[\e[48;5;183m\]\[\e[38;5;189m\]$(__char_prompt_module)\[\e[0m\]\
-\[\e[38;5;183m\]\[\e[0m\] '
+#promt
+PS1="\[\e[1m\]\[\e[31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31m\]]\[\e[0m\]$ "
 
 #general
-
 alias v="nvim"
 alias update="sudo apt update && sudo apt upgrade"
 alias size="du -sh"
 alias neofetch="fastfetch"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
-alias info="sudo dmidecode | grep -A 9 'System Information'"
+alias cls="clear"
+alias sysinfo="sudo dmidecode | grep -A 9 'System Information'"
 alias mkdir='mkdir -pv'
 alias ls="eza"
 alias ll="eza -l"
@@ -63,17 +22,17 @@ alias f="sudo find . | grep "
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
 #networking
-
 alias openports='netstat -nape --inet'
+alias ws="sudo tshark"
 
 #sysinfo
-
-alias meminfo='free -m -l -t'
+alias meminfo='sudo dmidecode --type=memory'
 alias psmem='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
 
-# functions
+
+#functions
 
 num() {
     local dir=${1:-.}  # Default to current directory if no argument is provided
@@ -88,8 +47,10 @@ function up {
         d="$d/.."
     done
 
+    # Remove the leading slash if present
     d=$(echo "$d" | sed 's/^\///')
 
+    # If $d is empty, default to ".."
     if [[ -z "$d" ]]; then
         d=".."
     fi
@@ -97,4 +58,11 @@ function up {
     cd "$d"
 }
 
+#variables
 export SUDO_EDITOR=nvim
+export EDITOR=nvim
+
+#extra
+pokemon-colorscripts -r --no-title 
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
