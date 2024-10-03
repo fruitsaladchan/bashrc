@@ -11,7 +11,6 @@ alias neofetch="fastfetch"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias cls="clear"
-alias sysinfo="sudo dmidecode | grep -A 9 'System Information'"
 alias mkdir='mkdir -pv'
 alias ls="eza"
 alias ll="eza -l"
@@ -27,8 +26,8 @@ alias ws="sudo tshark"
 
 #sysinfo
 alias meminfo='sudo dmidecode --type=memory'
-alias psmem='ps auxf | sort -nr -k 4 | head -10'
-alias pscpu='ps auxf | sort -nr -k 3 | head -10'
+alias sysinfo='sudo dmidecode --type=chassis'
+alias biosinfo='sudo dmidecode --types=bios'
 alias cpuinfo='lscpu'
 
 
