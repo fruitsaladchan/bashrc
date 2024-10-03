@@ -34,7 +34,7 @@ alias cpuinfo='lscpu'
 #functions
 
 num() {
-    local dir=${1:-.}  # Default to current directory if no argument is provided
+    local dir=${1:-.}
     sudo find "$dir" -type f | wc -l
 }
 
