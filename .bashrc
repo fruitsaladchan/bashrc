@@ -28,6 +28,7 @@ alias ws="sudo tshark"
 alias meminfo='sudo dmidecode --type=memory'
 alias sysinfo='sudo dmidecode --type=chassis'
 alias biosinfo='sudo dmidecode --type=bios'
+alias boardinfo='sudo dmidecode --type=baseboard'
 alias cpuinfo='lscpu'
 
 
