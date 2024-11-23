@@ -16,8 +16,9 @@ alias ls="eza"
 alias ll="eza -l"
 alias la="eza -la"
 alias l="eza -l"
+alias ff="fastfetch"
 alias linutil="curl -fsSL https://christitus.com/linux | sh"
-alias f="sudo find . | grep "
+alias f="fd -Hi"
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
 #networking
@@ -59,6 +60,7 @@ function up {
 #variables
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
 
 #extra
 pokemon-colorscripts -r --no-title 
