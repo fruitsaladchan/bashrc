@@ -5,8 +5,6 @@ PS1="\[\e[1m\]\[\e[31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31
 
 #general
 alias v="nvim"
-alias update="sudo apt update && sudo apt upgrade"
-alias size="du -sh"
 alias neofetch="fastfetch"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
@@ -17,9 +15,7 @@ alias ll="eza -l"
 alias la="eza -la"
 alias l="eza -l"
 alias ff="fastfetch"
-alias linutil="curl -fsSL https://christitus.com/linux | sh"
 alias f="fd -Hi"
-alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
 #networking
 alias openports='netstat -nape --inet'
@@ -63,6 +59,5 @@ export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
 
 #extra
-pokemon-colorscripts -r --no-title 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
