@@ -6,6 +6,7 @@ PS1="\[\e[1m\]\[\e[31m\][\[\e[33m\]\u\[\e[32m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[31
 #general
 alias v="nvim"
 alias neofetch="fastfetch"
+alias cat="bat"
 alias uptime="uptime -p"
 alias ipp="curl -s ipinfo.io/ip | awk '{print $1}'"
 alias cls="clear"
